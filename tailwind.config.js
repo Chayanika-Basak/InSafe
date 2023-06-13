@@ -36,6 +36,7 @@ module.exports = {
       "im-fell-double-pica-sc": "'IM FELL Double Pica SC'",
     },
     fontSize: {
+      xs: "12px",
       "xl" : "22px",
       "8xl": "20px",
       lg: "18px",

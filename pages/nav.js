@@ -12,7 +12,10 @@ const Navbar = ({pageName}) => {
   const inactive = `no-underline text-black text-lg rounded-full p-2 hover:bg-[#ffafcc] hover:text-white hover:shadow-md`;
   return (
     <div className='flex items-center justify-evenly p-6'>
-        <div className='text-xl w-2/5'></div>
+        <div className='text-xl w-2/5 flex items-center'>
+          <img src="/images/logo.png" alt="logo" className='w-16'/>
+          <h1 className='font-inter font-semibold'>InSafe</h1>
+        </div>
         <div className='flex items-center justify-evenly w-3/5'>
         <a href="/" className={pageName == "home" ? active: inactive}>Home</a>
         <a href="/tips" className={pageName == "tips" ? active: inactive}>Tips</a>

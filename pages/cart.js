@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import MyLayout from './myLayout'
 import { doc, getDocs, collection, query, where } from 'firebase/firestore'
-// import { useAuth } from '../context/AuthContext'
+import StripeCheckout from 'react-stripe-checkout';
 import { db, auth } from './firebase'
 import ItemCard from './itemCard'
 
@@ -57,9 +57,13 @@ useState(() => {
     }
     fetchCartData(uid)
 }, [])
+
+const handleToken = (token) => {
+
+}
   return (
     <MyLayout>
-    <div>
+      <div>
       {
         error ? <h1>{error}</h1> : <div></div>
       }
@@ -75,6 +79,18 @@ useState(() => {
         : <h1>Empty Cart</h1>
       }
       <div className='mx-5 p-5 text-7xl'>Amount Payable: <b>₹ {price}</b></div>
+      <div className='mx-5 p-5 text-7xl'>
+        <StripeCheckout
+          stripeKey='pk_test_51NIc8BSELLA9PilwiI2hD9VT57rgArjXEzoPCl4eRcvWuscoQS5EMveVlny0SkHatqEoNBpEDOnIlkGk9EBim0Ap00wjVPp6UC'
+          token={handleToken}
+          billingAddress
+          shippingAddress
+          name="All Products"
+          amount={price*100}
+          currency='INR'
+        >
+        </StripeCheckout>
+      </div>
     </div>
     </MyLayout>
   )
