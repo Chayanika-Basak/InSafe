@@ -43,6 +43,7 @@ module.exports = {
       base: "16px",
       "7xl": "26px",
       "45xl": "36px",
+      "3xs": "10px",
     },
   },
   plugins: [],

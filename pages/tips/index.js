@@ -15,7 +15,7 @@ const Tips = () => {
         src="/below-1.svg"
       /> */}
       <div className="absolute top-[719px] left-[162px] bg-[#FFD6Ff] rounded-full p-4">
-      <a href="/girlsHygiene">Click to view More</a>
+      <a href="/tips/femaleHygiene">Click to view More</a>
       </div>
       <div className="absolute top-[631px] left-[122px] font-light text-center inline-block w-[249px]">
         Embrace the flow, break the silence: Empowering menstrual awareness for
@@ -51,7 +51,7 @@ const Tips = () => {
       <div className="absolute top-[388px] left-[813px] rounded-39xl bg-white w-[343px] h-[392px]" />
       <div className="absolute top-[388px] left-[445px] rounded-39xl bg-white w-[343px] h-[392px]" />
       <div className="absolute top-[719px] left-[900px] bg-[#FFD6Ff] rounded-full p-4">
-        <a href="/">Click to view More</a>
+        <a href="/tips/maleHygiene">Click to view More</a>
       </div>
       <div className="absolute top-[620px] left-[862px] font-light text-center inline-block w-[249px]">
         Strong, Clean, and Confident: Boys who prioritize hygiene inspire
