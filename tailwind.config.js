@@ -28,6 +28,7 @@ module.exports = {
         "39xl": "58px",
         "31xl": "50px",
         "56xl": "75px",
+        "8xs": "5px",
       },
     },
     fontFamily: {
@@ -42,7 +43,33 @@ module.exports = {
       base: "16px",
       "7xl": "26px",
       "45xl": "36px",
+      "21xl": "35px",
+      "2xl": "18px",
     },
   },
   plugins: [],
 }
+
+
+
+// colors: {
+//   white: "#fff",
+//   black: "#000",
+//   lightskyblue: "#a2d2ff",
+//   lightpink: "#ffafcc",
+//   lightblue: "#bde0fe",
+// },
+// fontFamily: {
+//   inter: "Inter",
+// },
+// borderRadius: {
+//   "41xl": "60px",
+//   "8xs": "5px",
+// },
+// },
+// fontSize: {
+// "8xl": "20px",
+// "7xl": "19px",
+// "21xl": "35px",
+// "2xl": "18px",
+//     },

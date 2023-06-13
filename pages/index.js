@@ -15,7 +15,7 @@ export default function Home() {
       <div className="absolute top-[246px] left-[315px] rounded-[50%] [background:radial-gradient(50%_50%_at_50%_50%,_#bde0fe,_rgba(189,_224,_254,_0))] w-[418px] h-[377px]" />
       <div className="absolute top-[452px] left-[-155px] rounded-[50%] [background:radial-gradient(50%_50%_at_50%_50%,_#bde0fe,_rgba(189,_224,_254,_0))] w-[418px] h-[377px]" /> */}
       <div className="absolute top-[430px] left-[1011px] rounded-[50%] [background:radial-gradient(50%_50%_at_50%_50%,_#bde0fe,_rgba(189,_224,_254,_0))] w-[424px] h-[369px]" />
-      <img
+      <img 
         className="absolute top-[320px] left-[392px] w-[900px] h-[200px] object-cover"
         alt=""
         src="/images/beeline.png"
