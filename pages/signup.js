@@ -73,10 +73,8 @@ const Signup = () => {
 
     return (
         <MyLayout>
-            <div>
-        <button onClick={googleSignup} className='px-6 py-1 rounded-full text-lg bg-[#a2d2ff] shadow-md'>Login</button>
-      </div>
-        <div className='bg-lightskyblue rounded-xl mx-64 px-16 my-2 py-3'>
+            <div className='bg-mainBackground min-h-screen flex items-center'>
+        <div className='bg-white rounded-xl mx-64 px-16 w-96 shadow-xl'>
             <br></br>
             <br></br>
             <h1 className='text-lg my-4 font-semibold text-center'>Sign Up</h1>
@@ -85,29 +83,34 @@ const Signup = () => {
                 <div className='success-msg'>{successMsg}</div>
                 <br></br>
             </>}
-            <form className='flex flex-col gap-3' onSubmit={handleSignup}>
-                <label>Full Name</label>
-                <input type="text" className='form-control' required
+            <form className='flex flex-col' onSubmit={handleSignup}>
+                <label className='mt-4 mb-2'>Full Name</label>
+                <input type="text" className='border rounded-full px-2 py-1' required
                 onChange={(e)=>setName(e.target.value)} value={name}></input>
                 <br></br>
-                <label>Email</label>
-                <input type="email" className='form-control' required
+                <label className='mb-2'>Email</label>
+                <input type="email" className='border rounded-full px-2 py-1' required
                  onChange={(e)=>setEmail(e.target.value)} value={email}></input>
                 <br></br>
-                <label>Password</label>
-                <input type="password" className='form-control' required
+                <label className='mb-2'>Password</label>
+                <input type="password" className='border rounded-full px-2 py-1' required
                  onChange={(e)=>setPassword(e.target.value)} value={password}></input>
                 <br></br>
                 <div className='flex flex-col gap-4'>
-                    <span>Already have an account?  Login
-                    <a href="/login" className='link'> Here</a></span>
-                    <button type="submit" className='bg-white rounded-full p-4'>SIGN UP</button>
+                    <span>Already have an account?</span>
+                    <a href="/login" className='font-semibold underline'>Login Here</a>
+                    <button type="submit" className='bg-lightblue rounded-full p-2 mx-6 mb-4'>SIGN UP</button>
+                    <button onClick={googleSignup} className='bg-lightblue rounded-full p-2 mx-6 mb-8'>SignIn with Google</button>
                 </div>
             </form>
             {errorMsg&&<>
                 <br></br>
                 <div className='error-msg'>{errorMsg}</div>                
             </>}
+        </div>
+        <div className='w-56'>
+            <img src="/images/login.png" alt="login"/>
+        </div>
         </div>
         </MyLayout>
     )

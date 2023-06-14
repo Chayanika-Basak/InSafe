@@ -36,7 +36,8 @@ const Login = () => {
 
   return (
     <MyLayout>
-      <div className='bg-lightskyblue rounded-xl mx-64 px-16 my-2 py-3'>
+        <div className='bg-mainBackground min-h-screen flex items-center'>
+      <div className='bg-white rounded-xl mx-64 px-16 w-96 shadow-xl'>
             <br></br>
             <br></br>
             <h1 className='text-lg my-4 font-semibold text-center'>Login</h1>
@@ -45,26 +46,30 @@ const Login = () => {
                 <div className='success-msg'>{successMsg}</div>
                 <br></br>
             </>}
-            <form className='flex flex-col gap-3'
+            <form className='flex flex-col'
             onSubmit={handleLogin}>               
-                <label>Email</label>
-                <input type="email" className='form-control' required
+                <label className='mt-4 mb-2'>Email</label>
+                <input type="email" className='border rounded-full px-2 py-1' required
                 onChange={(e)=>setEmail(e.target.value)} value={email}></input>
                 <br></br>
-                <label>Password</label>
-                <input type="password" className='form-control' required
+                <label className='mb-2'>Password</label>
+                <input type="password" className='border rounded-full px-2 py-1' required
                 onChange={(e)=>setPassword(e.target.value)} value={password}></input>
                 <br></br>
                 <div className='flex flex-col gap-4'>
-                    <span>Don't have an account?  SignUp
-                    <a href="/signup" className='a'> Here</a></span>
-                    <button type="submit" className='bg-white rounded-full p-4'>LOGIN</button>
+                    <span>Don't have an account?</span>
+                    <a href="/signup" className='font-semibold underline'>Signup Here</a>
+                    <button type="submit" className='bg-lightblue rounded-full p-2 mx-6 mb-8'>LOGIN</button>
                 </div>
             </form>
             {errorMsg&&<>
                 <br></br>
                 <div className='error-msg'>{errorMsg}</div>                
             </>}
+        </div>
+        <div className='w-56'>
+            <img src="/images/login.png" alt="login"/>
+        </div>
         </div>
     </MyLayout>
   )
