@@ -9,7 +9,7 @@ const Cart = () => {
   const [cart, setCart] = useState(null);
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [uid, setUid]=useState("04BSM7lQSKhqrH8DAkzOlbZXau03");
+  const [uid, setUid]=useState("1QI2z8FLWggVHQ0xbubk54amUGV2");
   const [total, setTotal] = useState(0);
   let price=0;
   // function GetUserUid(){

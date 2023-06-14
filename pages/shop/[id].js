@@ -8,6 +8,8 @@ const IndProduct = () => {
     const router = useRouter();
     const id = router.query.id;
     const [product, setProduct] = useState(null);
+    const [successMsg, setSuccessMsg]=useState('');
+    const [qty, setQty] = useState(0);
 
     useEffect(() => {
          async function getData() {
@@ -51,10 +53,14 @@ const IndProduct = () => {
                 if(!q2 || !qs2 || !qs2.docs.length){ 
                   Product=product;
                   Product['qty']=1;
+                  setQty(1);
                   Product['TotalProductPrice']=Product.qty*Product.price; 
                     addDoc(colRef,Product)
                   .then(() => {
-                    console.log("Document successfully updated!");
+                    setSuccessMsg('Item added to cart!');
+                    setTimeout(()=>{
+                      setSuccessMsg('');
+                  },1000)
                   })
                   .catch((error) => {
                     console.error("Error updating document: ", error);
@@ -62,9 +68,13 @@ const IndProduct = () => {
                 }
                 else{
                   const prodRef = doc(docRef, "cartProducts", qs2.docs[0].id);
+                  setQty((qty) => qty + 1);
                   updateDoc(prodRef,{qty: increment(1), TotalProductPrice: increment(product.price)})
                   .then(() => {
-                    console.log("Document successfully updated!");
+                    setSuccessMsg('Item added to cart!');
+                    setTimeout(()=>{
+                      setSuccessMsg('');
+                  },1000)
                   })
                   .catch((error) => {
                     console.error("Error updating document: ", error);
@@ -83,13 +93,21 @@ const IndProduct = () => {
         <div>
             {
                 product ?
-                <div className='flex items-center'>
-                    <div className='w-64 mx-10'>
+                <div className='flex items-center justify-evenly'>
+                    <div className='w-96 mx-10'>
                         <img src = {product.photoURL} alt={product.name}/>
                     </div>
                     <div className='flex flex-col'>
-                        <h1 className='text-xl'>{product.name}</h1>
+                        <h1 className='text-45xl'>{product.name}</h1>
+                        <hr className='mt-8 mb-4'></hr>
+                        <div className='w-64'><h1 className='text-8xl my-4'>{product.description}</h1></div>
+                        <h1 className='text-xl mb-4'>₹ <s>{product.oldPrice}</s> {product.price}</h1>
                         <button className="bg-lightskyblue px-2 py-1 rounded-full" onClick={() => addToCart(product)}>Add to Cart</button>
+                        {/* <div className='text md mt-4 border rounded-full p-2 text-center'>Qty: {qty}</div> */}
+                        {successMsg&&<>
+                            <div className='text md mt-4 bg-green-100 rounded-full p-2 text-center'>{successMsg}</div>
+                            <br></br>
+                        </>}
                     </div>
                 </div> :
                 <div></div>
